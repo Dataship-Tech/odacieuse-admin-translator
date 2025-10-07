@@ -21,7 +21,8 @@ async def translate_product_name(product_name: str, target_language: str = "Engl
         target_language: The target language for translation (default: English)
 
     Returns:
-        The translated product name in proper English with identical styling preserved
+        The translated product name in proper English with identical styling preserved. Never return things like The translation for ... is ...,return directly the translation without other things.
+        Also if you find " symbol remove it by default.
     """
     # This is a placeholder - the actual translation logic will be handled by the LLM
     # with specific instructions to preserve styling
