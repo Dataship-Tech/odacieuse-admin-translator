@@ -15,6 +15,7 @@ async def translate_product_name(product_name: str, target_language: str = "Engl
     - Spacing patterns
     - Number formatting
     - Special characters
+    - Always remove quotation mark or double quotation mark
 
     Args:
         product_name: The original product name to translate/correct (can be in French, Portuguese, bad English, etc.)
@@ -53,6 +54,7 @@ CRITICAL RULES FOR TRANSLATION:
 6. PRESERVE NUMBER FORMATTING - "2 piece" stays "2 piece"
 7. PRESERVE SPECIAL CHARACTERS AND SYMBOLS
 8. CORRECT WHEN NEEDED - Fix bad English, translate foreign languages, but leave perfect English unchanged
+9. ALWAYS REMOVE - Quotation marks or double quotation marks
 
 TRANSLATION APPROACH:
 - Translate ALL descriptive words (colors, materials, product types) to proper English
