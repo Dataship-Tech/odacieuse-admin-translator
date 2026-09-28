@@ -13,6 +13,15 @@ dependencies = [
 [dependency-groups]
 dev = ["ruff>=0.8.2"]
 
+[tool.uv]
+# ODA-223 - contraintes de resolution (pas des dependances directes) :
+# - mcp<2 : blaxel 0.2.19 importe mcp.server.fastmcp, supprime dans mcp 2.x
+#   (meme blaxel 0.4.x impose mcp<2).
+# - fastapi<0.137 : blaxel[telemetry] pince opentelemetry-instrumentation-fastapi==0.56b0,
+#   qui plante (AttributeError '_IncludedRouter'.path) sur les routers inclus a partir
+#   de fastapi 0.137. fastapi 0.136 accepte starlette>=1.3.1, cible du ticket.
+constraint-dependencies = ["mcp>=1.28.1,<2", "fastapi<0.137"]
+
 [tool.ruff]
 indent-width = 4
 
